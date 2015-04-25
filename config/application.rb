@@ -1,0 +1,10 @@
+require 'active_record'
+require 'active_support'
+require 'active_support/all'
+require 'sqlite3'
+require 'logger'
+
+require './config/database'
+require './app/bionexo'
+require './app/models/quotation'
+require './app/models/product'
