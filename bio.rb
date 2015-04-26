@@ -1,10 +1,14 @@
 require './config/application'
 
 method_name = ARGV[0]
+args = ARGV[1..-1]
 
 if Bionexo.respond_to? method_name
-  args = ARGV[1].present? ? ARGV[1] : :completed
-  Bionexo.send(method_name, args)
+  if args
+    Bionexo.send(method_name, *args)
+  else
+    Bionexo.send(method_name)
+  end
 else
   puts 'bionexo <command> [<args>]'
   puts 'commands you can use:'
