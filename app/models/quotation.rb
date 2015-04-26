@@ -17,7 +17,7 @@ class Quotation < ActiveRecord::Base
   end
 
   def edit!
-    update_attribute(:status, :edit)
+    update_attribute(:status, :editing)
   end
 
   def invalid?(attribute)

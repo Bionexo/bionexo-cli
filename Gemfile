@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'thor'
 gem 'activerecord'
 gem 'activesupport'
 gem 'logger'
