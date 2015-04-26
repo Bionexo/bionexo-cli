@@ -10,7 +10,7 @@ class Quotation < ActiveRecord::Base
   validates :title, :address, :email, :phone_number, presence: true
   validates :quotation_type, inclusion: { in: QUOTATION_TYPES }
 
-  after_initialize :initialize_product
+  before_save :initialize_product
 
   def complete!
     update!(status: :completed)

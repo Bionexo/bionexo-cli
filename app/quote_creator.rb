@@ -36,6 +36,7 @@ class QuoteCreator
 
     raise if @quotation.invalid?(attribute)
   rescue
+    @quotation.update_attribute(attribute, nil)
     puts "Error: #{@quotation.attribute_error(attribute)}"
     user_input and abort
   end
