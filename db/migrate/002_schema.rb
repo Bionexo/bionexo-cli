@@ -5,7 +5,6 @@ class Schema < ActiveRecord::Migration
       t.string :address
       t.string :email
       t.string :phone_number
-      t.integer :product_id
 
       t.timestamps
     end
@@ -13,6 +12,7 @@ class Schema < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.integer :quantity
+      t.integer :quotation_id
 
       t.timestamps
     end
