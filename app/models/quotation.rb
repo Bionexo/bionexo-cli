@@ -8,7 +8,7 @@ class Quotation < ActiveRecord::Base
   delegate :name, :name=, :quantity, :quantity=, to: :product, prefix: true
 
   validates :title, :address, :email, :phone_number, presence: true
-  validates :quotation_type, inclusion: { in: QUOTATION_TYPES }
+  validates :quotation_type, inclusion: { in: QUOTATION_TYPES, message: "Enter any of the next: #{QUOTATION_TYPES}" }
 
   before_save :initialize_product
 
