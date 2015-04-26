@@ -1,5 +1,7 @@
 class Bionexo
   class << self
+    include ClientInputOutput
+
     def new
       QuoteCreator.new.create_or_continue
     end
@@ -11,10 +13,10 @@ class Bionexo
 
     def list(status = :completed)
       quotations = Quotation.where(status: status)
-      return puts 'No quotations found' if quotations.empty?
+      return tell 'No quotations found' if quotations.empty?
 
-      puts "Found #{quotations.size} #{'offer'.pluralize(quotations.size)}"
-      puts quotations
+      tell "Found #{quotations.size} #{'offer'.pluralize(quotations.size)}"
+      tell quotations
     end
   end
 end
